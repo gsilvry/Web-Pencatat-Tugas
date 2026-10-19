@@ -1,0 +1,138 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pencatat Tugas</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- LOGIN -->
+    <section id="login" class="view aktif">
+        <h1>♡ Pencatat Tugas ♡</h1>
+        <form id="form-login">
+            <label for="nama">Nama</label>
+            <input
+                type="text"
+                id="nama"
+                minlength="3"
+                placeholder="Masukkan nama (minimal 3 karakter)"
+                required
+            >
+
+            <label for="nrp">NRP</label>
+            <input
+                type="text"
+                id="nrp"
+                minlength="10"
+                maxlength="10"
+                pattern="[0-9]{10}"
+                inputmode="numeric"
+                placeholder="Masukkan NRP (10 angka)"
+                required
+            >
+
+            <button type="submit">Masuk</button>
+        </form>
+    </section>
+
+    <!-- NAVIGASI -->
+    <nav>
+        <button type="button" onclick="bukaHalaman('home')">Home</button>
+        <button type="button" onclick="bukaHalaman('daftar')">Daftar Tugas</button>
+        <button type="button" onclick="bukaHalaman('statistik')">Statistik</button>
+        <button type="button" onclick="logout()">Keluar</button>
+    </nav>
+
+    <!-- HOME -->
+    <section id="home" class="view" hidden>
+        <h1>Home ♡</h1>
+        <h2 id="salam"></h2>
+
+        <p>Total tugas: <span id="total-home">0</span></p>
+        <p>Belum selesai: <span id="belum-home">0</span></p>
+        <p>Selesai: <span id="selesai-home">0</span></p>
+
+        <h3>Ringkasan Mata Kuliah</h3>
+        <div id="ringkasan-matkul"></div>
+    </section>
+
+    <!-- DAFTAR TUGAS -->
+    <section id="daftar" class="view" hidden>
+        <h1>Daftar Tugas ♡</h1>
+
+        <form id="form">
+            <label for="isian">Nama Tugas</label>
+            <input
+                type="text"
+                id="isian"
+                minlength="3"
+                placeholder="Nama tugas (minimal 3 karakter)"
+                required
+            >
+
+            <label for="matkul">Mata Kuliah</label>
+            <input
+                type="text"
+                id="matkul"
+                minlength="3"
+                placeholder="Mata kuliah (minimal 3 karakter)"
+                required
+            >
+
+            <label for="deadline">Deadline</label>
+            <input type="date" id="deadline">
+
+            <button type="submit">Tambah Tugas</button>
+        </form>
+
+        <label for="filter-matkul">Filter Mata Kuliah</label>
+        <select id="filter-matkul">
+            <option value="">Semua Mata Kuliah</option>
+        </select>
+
+        <label for="filter-status">Filter Status</label>
+        <select id="filter-status">
+            <option value="">Semua Status</option>
+            <option value="belum">Belum Selesai</option>
+            <option value="selesai">Selesai</option>
+        </select>
+
+        <p id="jumlah-filter">Jumlah tugas: 0</p>
+        <ul id="list"></ul>
+    </section>
+
+    <!-- STATISTIK -->
+    <section id="statistik" class="view" hidden>
+        <h1>Statistik Tugas ♡</h1>
+
+        <h2 id="angka">0%</h2>
+
+        <div class="wadah-progres">
+            <div id="isi-progres"></div>
+        </div>
+
+        <p id="keterangan-progres">Belum ada tugas.</p>
+
+        <div id="ucapan-selamat" hidden>
+            <h2>Great Job! 🎉</h2>
+            <img
+                id="gambar-selamat"
+                src="gambar-selamat.jpg"
+                alt="Selamat, semua tugas selesai!"
+            >
+            <p id="fallback-selamat" hidden>
+                Hebat! Semua tugas sudah selesai! ♡
+            </p>
+        </div>
+    </section>
+
+    <footer>
+        <p>♡ Pencatat Tugas ♡</p>
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+</html>

@@ -1,0 +1,162 @@
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    background: #ffe4ec;
+    color: #8b005d;
+}
+
+h1, h2, h3 {
+    color: #c71585;
+}
+
+.view {
+    max-width: 700px;
+    margin: 20px auto;
+    padding: 24px;
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 4px 12px #dda0dd55;
+}
+
+.view.aktif {
+    animation: fadeMasuk 0.4s ease-in-out;
+}
+
+.view[hidden],
+[hidden] {
+    display: none !important;
+}
+
+@keyframes fadeMasuk {
+    from {
+        opacity: 0;
+        transform: translateY(8px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 20px auto;
+}
+
+button {
+    border: none;
+    border-radius: 10px;
+    padding: 10px 16px;
+    background: #ff1493;
+    color: white;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+button:hover {
+    background: #c71585;
+}
+
+input, select {
+    display: block;
+    width: 100%;
+    margin: 8px 0 16px;
+    padding: 11px;
+    border: 1px solid #dda0dd;
+    border-radius: 8px;
+    background: #fffafd;
+    font-size: 15px;
+}
+
+label {
+    font-weight: bold;
+}
+
+#list {
+    padding-left: 25px;
+}
+
+#list li {
+    margin: 12px 0;
+    padding: 12px;
+    background: #fff0f6;
+    border-radius: 10px;
+    overflow-wrap: anywhere;
+}
+
+.tugas-info {
+    margin: 8px 0;
+}
+
+.selesai {
+    opacity: 0.65;
+    text-decoration: line-through;
+}
+
+.hapus {
+    margin-top: 8px;
+    background: #c71585;
+}
+
+.wadah-progres {
+    height: 25px;
+    width: 100%;
+    overflow: hidden;
+    background: #f5d5e5;
+    border-radius: 20px;
+}
+
+#isi-progres {
+    width: 0;
+    height: 100%;
+    background: #ffd700;
+    border-radius: 20px;
+    transition: width 0.4s ease;
+}
+
+#ucapan-selamat {
+    text-align: center;
+    margin-top: 24px;
+}
+
+#gambar-selamat {
+    display: block;
+    width: 100%;
+    max-width: 350px;
+    height: auto;
+    margin: 15px auto;
+    border-radius: 12px;
+}
+
+footer {
+    margin-top: 30px;
+    text-align: center;
+    color: #c71585;
+}
+
+@media (max-width: 500px) {
+    body {
+        padding: 10px;
+    }
+
+    .view {
+        padding: 16px;
+    }
+
+    nav {
+        gap: 6px;
+    }
+
+    nav button {
+        padding: 9px 11px;
+    }
+}
